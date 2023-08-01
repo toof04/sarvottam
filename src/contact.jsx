@@ -6,6 +6,7 @@ import emailjsConfig from './emailjsConfig';
 const ContactForm = () => {
   const [userType, setUserType] = useState('new');
   const [plotNumber, setPlotNumber] = useState('');
+  const [name, setName] = useState('');
   const [showNotification, setShowNotification] = useState(false);
 
   const handleUserTypeChange = (event) => {
@@ -14,43 +15,45 @@ const ContactForm = () => {
   };
 
   const handleSubmit = () => {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+
+    if (!nameInput.value || !phoneInput.value) {
+      // Check if required fields are not filled
+      alert('Please fill in all required fields.');
+      return;
+    }
 
     const formData = {
       userType,
-      name,
-      email,
-      phone,
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
       plotNumber: userType === 'existing' ? plotNumber : null,
-      message,
+      message: messageInput.value,
     };
 
-    emailjs.send(
-      emailjsConfig.serviceId,
-      emailjsConfig.templateId,
-      formData,
-      emailjsConfig.userId
-    )
-    .then((response) => {
-      console.log('Email sent successfully!', response);
-      setShowNotification(true);
-      setTimeout(() => {
-        setShowNotification(false);
-      }, 4000); // 4 seconds
-      // Reset the form after submission (optional)
-      
-      setPlotNumber('');
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-    });
+    emailjs
+      .send(emailjsConfig.serviceId, emailjsConfig.templateId, formData, emailjsConfig.userId)
+      .then((response) => {
+        console.log('Email sent successfully!', response);
+        setShowNotification(true);
+        setTimeout(() => {
+          setShowNotification(false);
+        }, 4000); // 4 seconds
+        // Reset the form after submission (optional)
+        setUserType('new');
+        setPlotNumber('');
+        setName('');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
   };
 
-  
- return (
+  return (
     <div className="container">
       <h1>Contact Us</h1>
 
@@ -64,8 +67,14 @@ const ContactForm = () => {
 
       <div id="newInvestorFields">
         <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" required />
+          <label htmlFor="name">Name:  *</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
 
         <div>
@@ -74,36 +83,41 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="phone">Phone Number:</label>
+          <label htmlFor="phone">Phone Number:  *</label>
           <input type="tel" id="phone" required />
         </div>
+
         {userType === 'existing' && (
-        <div id="existingInvestorFields" className={userType === 'existing' ? 'slide-in' : ''}>
-          <div>
-            <label htmlFor="plotNumber">Plot Number:</label>
-            <input
-              type="text"
-              id="plotNumber"
-              value={plotNumber}
-              onChange={(e) => setPlotNumber(e.target.value)}
-              required
-            />
+          <div id="existingInvestorFields" className={userType === 'existing' ? 'slide-in' : ''}>
+            <div>
+              <label htmlFor="plotNumber">Plot Number:</label>
+              <input
+                type="text"
+                id="plotNumber"
+                value={plotNumber}
+                onChange={(e) => setPlotNumber(e.target.value)}
+                required
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+
         <div>
           <label htmlFor="message">Message:</label>
           <textarea id="message" required />
         </div>
       </div>
 
-      
-
       <div>
-        <button type="button" onClick={handleSubmit}>Send</button>
+        <button type="button" onClick={handleSubmit}>
+          Send
+        </button>
       </div>
-            {showNotification && (
-        <div className="notification">Thank you, our sales team shall soon revert back to you.</div>
+
+      {showNotification && (
+        <div className="notification">
+          Thank you, our sales team shall soon revert back to you.
+        </div>
       )}
     </div>
   );
