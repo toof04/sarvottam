@@ -20,7 +20,7 @@ const ComingSoonPage = () => {
           <form>
            <ContactForm/>
           </form>
-          <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12
+          <iframe className='map' title='googleMap' src="https://www.google.com/maps/embed?pb=!1m18!1m12
           !1m3!1d28049.733970338235!2d77.58446215!3d28.503125899999997!2m3!1f0!2f0!3f
           0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c953de3437925%3A0xbdeb5d45b606c2f7
           !2sMegapolis%2C%20Chamrawali%20Ramgarh%2C%20Uttar%20Pradesh%20203207!5e0!3m2!1
