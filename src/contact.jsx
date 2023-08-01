@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ContactForm.css'; // Make sure to create and import the CSS file
 import emailjs from '@emailjs/browser';
 import emailjsConfig from './emailjsConfig';
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js'></script>
 
 const ContactForm = () => {
   const [userType, setUserType] = useState('new');
