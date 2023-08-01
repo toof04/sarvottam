@@ -102,3 +102,31 @@ h1 {
         width: 30em;
       }
   }
+
+
+
+  .waviy {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      animation: waviy 1s infinite;
+      animation-delay: 1s;
+    
+  }
+ 
+        .sec {
+            animation: waviy 1.01s infinite;
+        }
+
+  @keyframes waviy {
+
+      0%,
+      40%,
+      100% {
+          transform: translateY(0)
+      }
+
+      20% {
+          transform: translateY(-5px)
+      }
+  }

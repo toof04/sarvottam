@@ -10,7 +10,13 @@ const ComingSoonPage = () => {
         <div className="gridbg content ">
         <div className="box">
         <span className='company'>Sarvottam Megapolis</span>
-           <span className='coming'>Coming Soon..</span>
+           <span className='coming'>Coming Soon 
+  
+
+   <span  className="waviy span">.</span>
+   <span  class="waviy sec">.</span>
+
+</span>
           <span className='desc'>1600 Acre Green Hi-tech City <br/> Opposite Bodaki Railway Junction, Greater Noida,           Gautam Buddha Nagar, U.P</span>
           </div>
         </div>
