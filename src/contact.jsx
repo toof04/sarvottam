@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactForm.css'; // Make sure to create and import the CSS file
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import emailjsConfig from './emailjsConfig';
 
 const ContactForm = () => {
