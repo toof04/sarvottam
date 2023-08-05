@@ -2,7 +2,7 @@
 .container {
     font-family: Arial, sans-serif;
     max-width: 700px;
-    margin: 50px auto;
+    justify-content: center;
     padding: 20px;
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -10,6 +10,9 @@
 
 h1 {
     text-align: center;
+    
+     font-size: 60px;
+            
 }
 
 form div {
@@ -72,11 +75,11 @@ button:hover {
 
   @media screen and (max-width: 768px) {
     h1{
-        font-size: 50px;
+        font-size: 40px;
     }
 }
  @media screen and (min-width: 768px) and (max-width: 1170px) {
      h1 {
-         font-size: 50px;
+         font-size: 40px;
      }
  }

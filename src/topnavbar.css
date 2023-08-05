@@ -1,0 +1,40 @@
+.top-navbar {
+    display: flex;
+
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.nav-button {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 30px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+    color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this rule to remove the default button outline when focused */
+.nav-button:focus {
+    outline: none;
+}
+
+  @media screen and (max-width: 768px) {
+      .top-navbar {
+        overflow-x:scroll;
+        width: 100%;
+
+      }
+          .nav-button {
+            height: 7em;
+          }
+
+    }

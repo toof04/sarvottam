@@ -1,13 +1,32 @@
 /* Coming Soon Section */
+.csshandler{
+    display: grid;
+        grid-template-areas:
+                 'nav nav nav nav nav'
+            'soon soon soon contact contact';
+            overflow: hidden;
+            overflow-y: hidden;
+
+}
 .coming-soon-container {
+    grid-area:soon;
     display: flex;
     flex-direction: column;
 }
 
 .coming-soon-section {
-    padding-top: 4%;
-    height: 100vh;
+    height: 84vh;
     
+}
+.navbar{
+        grid-area: nav;
+        width: 100vw;
+        height: 16vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+            border-bottom: 1px black solid;
+        
 }
 .gridbg {
     background-image: linear-gradient(#ccccdc 1px, transparent 1px),
@@ -18,20 +37,18 @@
 .box {
     display: grid;
     background: radial-gradient(transparent, #ffffff 85%);
-    height: 100vh;
+    height: 84vh;
     
 }
 
-h1 {
-    font-size: 80px;
-  
-}
+
 .company{
-    font-size: 4em;
+    font-size: 3em;
+
+   
     font-weight: 900;
     color: #333343;
-    margin: auto;
-    text-align: center;
+
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial,
     sans-serif;
 }
@@ -39,7 +56,7 @@ h1 {
     font-size: 3em;
     font-weight: 900;
     color: #333343;
-    margin: auto;
+    margin-top: 20vh;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial,
         sans-serif;
@@ -59,12 +76,14 @@ h1 {
 /* Contact Section */
 .contact-section {
     padding: 10px;
-    background-color: #fbfaf7;
+    background-color: #fdfcfa;
     /* Set a background color for the contact section */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+    width: 35vw;
+    padding: 1vw;
+    grid-area: contact;
 }
 
 .content1{
@@ -76,29 +95,61 @@ h1 {
     div{
         width: 400px;
     }
+        
 
 }
 .map {
     margin: 10px;
     width: 50em;
-    height: 50em;
     border: none;
 }
 .footer{
     height: 5%;
     background-color: #333343;
 }
+ @media screen and (min-width:769px) and (max-width: 1300px) {
+.company {
+        font-size: 2em;
 
+    }
+}
   @media screen and (max-width: 768px) {
+    .navbar{
+        width:100vw;
+        display: flex;
+        flex-direction: column;
+       height: 30vh;
+    }
+    .desc{
+    }
+        .coming {
+                margin-top: 0vh;
+                display: flex;
+                justify-content: center;
+                        align-items: center;
+ 
+        }
+    .csshandler {
+            display: flex;
+            flex-direction: column;
+    }
+
       .coming-soon-container {
+        display: flex;
+        justify-content: start;
+        align-items: start;
           font-size: 12px;
+          height: 56vh;
+      }
+      .contact-section{
+        width: 100vw;
       }
       .content1{
         flex-direction: column;
-        margin: 20%;
+        margin: 10%;
       }
       .map{
-        margin: 20px;
+        margin: 10px;
         width: 30em;
       }
   }
