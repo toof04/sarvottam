@@ -136,8 +136,7 @@
 
       .coming-soon-container {
         display: flex;
-        justify-content: start;
-        align-items: start;
+
           font-size: 12px;
           height: 56vh;
       }
