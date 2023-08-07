@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ComingSoonPage.css'; // CSS file to style the components
 import ContactForm from './contact';
 import TopNavbar from './topnav';
 
 
+
+
 const ComingSoonPage = () => {
+
+  const [burgerClicked,isburgerclicked]=useState(false);
+  const toggleBurgerClicked = () => {
+    isburgerclicked(!burgerClicked);
+  };
+
+
+  const [windowwidth, setWindowWidth] = useState(window.innerWidth); 
+
+
+useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <div className = 'csshandler'>
       <div className="navbar">
         <span className='company'>Sarvottam Megapolis</span>
-        <TopNavbar/>
+    {windowwidth > 768 ? (
+          <TopNavbar className="menu" />
+        ) : (
+          <React.Fragment>
+            <button className='button' onClick={toggleBurgerClicked}>
+              {burgerClicked ? 'Menu⮝' : 'Menu⮟'}
+            </button>
+            {burgerClicked && (
+              <TopNavbar className={`menu top-navbar ${burgerClicked ? 'show' : 'hide'}`} />
+            )}
+          </React.Fragment>
+        )}
         </div>
     <div className="coming-soon-container">
       <section className="coming-soon-section">

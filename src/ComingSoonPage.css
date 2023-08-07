@@ -21,6 +21,7 @@
 .navbar{
         grid-area: nav;
         width: 100vw;
+        
         height: 16vh;
         display: flex;
         justify-content: space-evenly;
@@ -118,8 +119,18 @@
         width:100vw;
         display: flex;
         flex-direction: column;
-       height: 30vh;
+  
+    
+        height: fit-content;
+
+      
     }
+         .button {
+             background-color: white;
+             border:2px gray solid;
+             color:#333343;
+             margin:15px;
+         }
     .desc{
     }
         .coming {

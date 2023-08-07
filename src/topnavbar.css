@@ -31,6 +31,7 @@
       .top-navbar {
         overflow-x:scroll;
         width: 100%;
+        flex-direction: column;
 
       }
           .nav-button {
