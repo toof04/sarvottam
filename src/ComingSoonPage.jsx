@@ -37,7 +37,7 @@ useEffect(() => {
         ) : (
           <React.Fragment>
             <button className='button' onClick={toggleBurgerClicked}>
-              {burgerClicked ? 'Menu⮝' : 'Menu⮟'}
+              {burgerClicked ? 'Menu↑' : 'Menu↓'}
             </button>
             {burgerClicked && (
               <TopNavbar className={`menu top-navbar ${burgerClicked ? 'show' : 'hide'}`} />
