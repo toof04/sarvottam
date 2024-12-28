@@ -31,7 +31,7 @@ useEffect(() => {
   return (
     <div className = 'csshandler'>
       <div className="navbar">
-        <span className='company'>Sarvottam Megapolis</span>
+        <span className='company'>Ansal Megapolis</span>
     {windowwidth > 768 ? (
           <TopNavbar className="menu" />
         ) : (
