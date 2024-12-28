@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 
 function App() {
     useEffect(() => {
-    document.title = 'Sarvottam Megapolis';
+    document.title = 'Ansal Megapolis';
   }, []);
   return (
     <div className="App">
