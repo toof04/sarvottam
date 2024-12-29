@@ -31,7 +31,8 @@ useEffect(() => {
   return (
     <div className = 'csshandler'>
       <div className="navbar">
-        <span className='company'>Ansal Megapolis</span>
+        <span className='company'>          <img src="logo.jpg" alt="Ansal Megapolis" className="logo" />
+        </span>
     {windowwidth > 768 ? (
           <TopNavbar className="menu" />
         ) : (

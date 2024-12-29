@@ -30,9 +30,10 @@
         
 }
 .gridbg {
-    background-image: linear-gradient(#ccccdc 1px, transparent 1px),
-        linear-gradient(to right, #ccccdc 1px, transparent 1px);
-    background-size: 100px 100px;
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .box {
@@ -63,7 +64,7 @@
         sans-serif;
 }
 .desc{
-
+    background-color: #d6d4d477;
     font-size: 2em;
     font-weight: 600;
     color: #333343;
@@ -131,8 +132,7 @@
              color:#333343;
              margin:15px;
          }
-    .desc{
-    }
+    
         .coming {
                 margin-top: 0vh;
                 display: flex;
@@ -190,4 +190,8 @@
       20% {
           transform: translateY(-5px)
       }
+  }
+  .logo {
+    height: 100px; /* Adjust the height to your desired size */
+    width: auto; /* Maintains aspect ratio */
   }

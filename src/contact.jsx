@@ -9,15 +9,13 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [showNotification, setShowNotification] = useState(false);
 
-  const handleUserTypeChange = (event) => {
-    setUserType(event.target.value);
-    setPlotNumber(''); // Reset plotNumber when userType is changed
-  };
+
 
   const handleSubmit = () => {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
+    const sectorInput = document.getElementById('sector');
     const messageInput = document.getElementById('message');
 
     if (!nameInput.value || !phoneInput.value) {
@@ -31,6 +29,7 @@ const ContactForm = () => {
       name: nameInput.value,
       email: emailInput.value,
       phone: phoneInput.value,
+      sector: sectorInput.value,
       plotNumber: userType === 'existing' ? plotNumber : null,
       message: messageInput.value,
     };
@@ -57,14 +56,6 @@ const ContactForm = () => {
     <div className="container">
       <h1>Contact Us</h1>
 
-      <div>
-        <label htmlFor="userType">Select your option:</label>
-        <select id="userType" value={userType} onChange={handleUserTypeChange}>
-          <option value="new">New Investor</option>
-          <option value="existing">Existing Investor (Ansal API)</option>
-        </select>
-      </div>
-
       <div id="newInvestorFields">
         <div>
           <label htmlFor="name">Name:  *</label>
@@ -78,7 +69,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email: </label>
           <input type="email" id="email" required />
         </div>
 
@@ -87,7 +78,11 @@ const ContactForm = () => {
           <input type="tel" id="phone" required />
         </div>
 
-        {userType === 'existing' && (
+        <div>
+          <label htmlFor="phone">Sector Number: </label>
+          <input type="text" id="sector"  />
+        </div>
+
           <div id="existingInvestorFields" className={userType === 'existing' ? 'slide-in' : ''}>
             <div>
               <label htmlFor="plotNumber">Plot Number:</label>
@@ -96,14 +91,13 @@ const ContactForm = () => {
                 id="plotNumber"
                 value={plotNumber}
                 onChange={(e) => setPlotNumber(e.target.value)}
-                required
+                
               />
             </div>
           </div>
-        )}
-
+        
         <div>
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message">Message: </label>
           <textarea id="message" required />
         </div>
       </div>
