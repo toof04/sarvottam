@@ -6,6 +6,15 @@ import React, { useEffect } from 'react';
 
 
 function App() {
+  useEffect(() => {
+    const handleContextmenu = e => {
+        e.preventDefault()
+    }
+    document.addEventListener('contextmenu', handleContextmenu)
+    return function cleanup() {
+        document.removeEventListener('contextmenu', handleContextmenu)
+    }
+}, [ ])
     useEffect(() => {
     document.title = 'Ansal Megapolis';
   }, []);
