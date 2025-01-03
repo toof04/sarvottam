@@ -73,7 +73,7 @@ const TopNavbar = () => {
         )}
       </div>
       <button className="nav-button">Investment Options</button>
-      <a target = "_blank" href = "https://maps.app.goo.gl/gzd2AApojANt438Q7">
+      <a target = "_blank" rel="noreferrer"  href = "https://maps.app.goo.gl/gzd2AApojANt438Q7">
       <button
         className="nav-button"
         style={{ backgroundColor: 'lightgreen' }}
