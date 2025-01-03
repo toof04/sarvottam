@@ -34,9 +34,7 @@
         flex-direction: column;
 
       }
-          .nav-button {
-            height: 7em;
-          }
+
 
     }
 
@@ -106,8 +104,8 @@
 
 .overlay-content {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -139,4 +137,104 @@
 
 .close-button:hover {
   background: #d32f2f;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 200px; /* Ensure consistent width */
+}
+
+.dropdown-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  color: black;
+  background: lightgreen;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background: #88cc88;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.overlay-content {
+  width: 90%; /* Adjusted for smaller screens */
+  max-width: 600px;
+  height: 80%;
+  max-height: 700px;
+  background: rgb(13, 13, 13);
+  position: relative;
+  overflow: hidden; /* Ensure no extra scrollbars */
+  border-radius: 8px; /* Rounded corners for modern look */
+}
+
+.close-button {
+  position: absolute;
+  font-size: medium;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded button */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 100%; /* Full width on mobile */
+    box-shadow: none; /* Simplify for mobile */
+  }
+
+  .dropdown-button {
+    font-size: 14px; /* Smaller font for mobile */
+    padding: 8px;
+  }
+
+  .overlay-content {
+    width: 95%; /* Slightly wider for mobile */
+    height: 85%; /* Adjust height */
+    border-radius: 4px;
+  }
+
+  .close-button {
+    font-size: small; /* Smaller button text */
+    padding: 4px 8px;
+  }
+}
+
+/* Smaller screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+  .dropdown-button {
+    width: 50%;
+    font-size: 12px; /* Further reduce font size */
+    padding: 6px;
+    justify-self: center;
+  }
+
+  .overlay-content {
+    height: 90%; /* Maximize height for smaller screens */
+  }
 }
