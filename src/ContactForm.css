@@ -77,9 +77,30 @@ button:hover {
     h1{
         font-size: 40px;
     }
+    .container{
+        margin-left: 30vw;
+ 
+        font-size: small;
+    }
+    input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 50%;
+}
+    button{
+        width: 50%;
+    }
 }
  @media screen and (min-width: 768px) and (max-width: 1170px) {
      h1 {
          font-size: 40px;
+     
+
+     }
+     .container{
+
+        
      }
  }

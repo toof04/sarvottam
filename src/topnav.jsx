@@ -18,7 +18,15 @@ const TopNavbar = () => {
   return (
     <div className="top-navbar">
       <button className="nav-button">Home</button>
-      <button className="nav-button">About Us</button>
+      <button
+              className="nav-button"
+              style={{ backgroundColor: 'lightgreen' }}
+              onClick={() =>
+                openOverlay(
+                  'video.mp4'
+                )
+              }
+            >Video</button>
       <button
         className="nav-button"
         style={{ backgroundColor: 'lightgreen' }}
